@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+/*/////////////////
+header
+/////////////////*/
+
+header {
+    box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 40px 80px;
+    background-color: #fff;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+h1 {
+    float: left;
+    font-size: 1.625em;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+
+h1 a {
+    color: #323232;
+}
+
+
+/*modalMenu*/
+
+#modal_open,
+#modal_open span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+#modal_open {
+    float: right;
+    position: relative;
+    width: 40px;
+    height: 23px;
+}
+
+#modal_open span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #323232;
+    border-radius: 4px;
+}
+
+#modal_open span:nth-of-type(1) {
+    top: 0;
+}
+
+#modal_open span:nth-of-type(2) {
+    top: 10px;
+}
+
+#modal_open span:nth-of-type(3) {
+    bottom: 0;
+}
+
+#modal_open.active span {
+    z-index: 1;
+    background-color: #fff;
+    transition: all .4s;
+}
+
+#modal_open.active span:nth-of-type(1) {
+    -webkit-transform: translateY(10px) rotate(-45deg);
+    transform: translateY(10px) rotate(-45deg);
+}
+
+#modal_open.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#modal_open.active span:nth-of-type(3) {
+    -webkit-transform: translateY(-10px) rotate(45deg);
+    transform: translateY(-10px) rotate(45deg);
+}
+
+#modal_main {
+    display: none;
+    width: 500px;
+    height: 300px;
+    position: fixed;
+    z-index: 2;
+    text-align: center;
+    font-size: 2.250em;
+    line-height: 3em;
+}
+
+#modal_main li {
+    font-size: 1.875em;
+}
+
+#modal_main li:hover {
+    opacity: 0.3;
+    transition: 0.2s linear;
+}
+
+#modal_main li a {
+    color: #fff;
+}
+
+#modal_bg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    cursor: pointer;
+}
+
+/*headerFix*/
+
+.header_fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.modal_fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*/////////////////
+main
+/////////////////*/
+
+#contents li {
+    text-align: center;
+    position: relative;
+}
+
+#contents h2 {
+    font-size: 1.875em;
+    line-height: 1.500em;
+}
+
+.contents_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    color: #fff;
+}
+
+.contents_image {
+    background-color: #000;
+}
+
+.charge li {
+    margin: 20px 0;
+    padding: 10px 26px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50px 50px;
+}
+
+.charge:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#contents img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    vertical-align: bottom;
+    transition: opacity 0.3s linear;
+}
+
+#contents img:hover {
+    opacity: 0.3;
+}
+
+#contents:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+/*/////////////////
+footer
+/////////////////*/
+
+footer {
+    box-shadow: 0 -3px 3px -3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 -3px 3px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 -3px 3px -3px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    padding: 40px 80px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 1.250em;
+}
+
+
+/*==============================
+スマホ設定 画面の横幅が750px以下
+==============================*/
+
+@media screen and (max-width: 750px) {
+        
+/*/////////////////
+header
+/////////////////*/
+
+header {
+    padding: 40px;
+}
+      
+#modal_main {
+    font-size: 2em;
+    line-height: 3.4em;
+}
+        
+    
+/*/////////////////
+main
+/////////////////*/
+
+#contents h2 {
+    font-size: 1.250em;
+    line-height: 1.4em;
+}
+    
+.charge li {
+    font-size: 0.7em;
+    margin: 10px 0;
+    padding: 6px 12px;
+    border: 1px solid #fff;
+}
+    
+.contents_txt p {
+    font-size: 0.6em;
+}
+   
+    
+/*/////////////////
+footer
+/////////////////*/
+
+footer {
+    padding: 40px;
+}
+    
+footer p {
+    font-size: 1em;
+}
+
+    
+}
